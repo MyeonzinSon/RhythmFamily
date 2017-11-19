@@ -4,15 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneMover : MonoBehaviour {
-    
-	// Use this for initialization
-	void Start () {
-		
+    	
+	public int sceneToGo;
+	void Update () 
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			MoveScene(sceneToGo);
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void MoveScene(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);
 	}
     public void MoveScene(int sceneNum)
     {
