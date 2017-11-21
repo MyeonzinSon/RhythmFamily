@@ -10,6 +10,7 @@ public class Move_mainplay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("SelectMode");
+            MusicPlayer.PlaySound();
         }
     }
 }

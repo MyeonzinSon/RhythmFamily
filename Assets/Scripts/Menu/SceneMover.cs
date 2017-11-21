@@ -17,9 +17,11 @@ public class SceneMover : MonoBehaviour {
 	public void MoveScene(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);
+		MusicPlayer.PlaySound();
 	}
     public void MoveScene(int sceneNum)
     {
         SceneManager.LoadScene(sceneNum);
+		MusicPlayer.PlaySound();
     }
 }
