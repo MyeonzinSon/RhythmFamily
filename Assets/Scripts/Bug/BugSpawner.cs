@@ -15,52 +15,7 @@ public class Pattern
 {
 	public Note[] notes;
 }
-/*class SpawnOne : MonoBehaviour
-{
-	float oneBeat = 0.49180327868f;
-	GameObject selectedBug;
 
-	float spawnTime;
-
-	bool hasSpawned;
-	float initTime;	
-	Vector2 spawnPos;
-	public SpawnOne(Note note, Vector2 pos, int measureNum, GameObject go)
-	{
-		spawnTime = (measureNum * 4 + note.beat - 1 - 2.5f) * oneBeat;
-		spawnPos = pos;
-		selectedBug = go;
-		StartCoroutine(Spawn());
-	}
-	IEnumerator Spawn()
-	{
-		yield return new WaitForSeconds(spawnTime);
-		
-		Destroy(this);
-	}
-	void Start()
-	{
-		initTime = Time.time;
-	}
-	void Update()
-	{
-
-		Debug.Log("update?");
-		if(!hasSpawned && GetTime() >= spawnTime)
-		{
-			Instantiate(selectedBug).GetComponent<BugMover>().SetVariables(spawnPos);
-			hasSpawned = true;
-		}
-		else if (hasSpawned)
-		{
-			Destroy(this);
-		}
-	}
-	float GetTime()
-	{
-		return Time.time - initTime;
-	}
-}*/
 public class BugSpawner : MonoBehaviour {
 
 	Queue<GameObject> spawnQ;
@@ -75,7 +30,7 @@ public class BugSpawner : MonoBehaviour {
 	public int[] patternScore;
 	
 
-	float oneBeat = 0.49180327868f;
+	float oneBeat = 0.491803279f;
 	float initTime;
 	bool hasPlayed;
 	int normalPosNum = 0;
@@ -106,6 +61,7 @@ public class BugSpawner : MonoBehaviour {
 				selectedBug = bigBug;
 			}
 			spawnQ.Enqueue(SpawnOne(p.notes[i], pos, measureNum, selectedBug));
+			spawnQ.Enqueue(SpawnOne(p.notes[i], new Vector2(-1*pos.x, pos.y), measureNum, selectedBug));
 			normalPosNum++;
 			bigPosNum++;
 			if(normalPosNum >= normalPositions.Length)
@@ -122,7 +78,7 @@ public class BugSpawner : MonoBehaviour {
 	{
 		float spawnTime = (measureNum * 4 + note.beat - 1 - 2.5f) * oneBeat;
 		GameObject go = Instantiate(selectedBug,transform);
-		go.GetComponent<BugMover>().SetVariables(spawnTime, spawnPos);
+		go.GetComponent<BugMover>().SetVariables(spawnTime, spawnPos,Time.fixedTime);
 		return go;
 	}
 	void Update () 

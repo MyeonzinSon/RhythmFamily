@@ -28,7 +28,6 @@ public class BugMover : MonoBehaviour {
 	{
 		anim = GetComponent<Animator>();
 
-		initTime = Time.time;
 		float preAngle = 2f * Mathf.PI * Random.value;
 		preDisp = new Vector2(distance*Mathf.Cos(preAngle), distance*Mathf.Sin(preAngle));
 		float postAngle = 2f * Mathf.PI * Random.value;
@@ -38,20 +37,21 @@ public class BugMover : MonoBehaviour {
 		midDuration = oneBeat * midBeats;
 		postDuration = oneBeat * postBeats;
 	}
-	public void SetVariables(float st, Vector2 pos)
+	public void SetVariables(float st, Vector2 pos, float time)
 	{
 		spawnTime = st;
 		midPosition = pos;
+		initTime = time;
 	}
 	float GetTime()
 	{
-		return Time.time - initTime;
+		return Time.fixedTime - initTime;
 	}
 	void SetPos(Vector2 vec)
 	{
 		transform.position = vec;
 	}
-	void Update () 
+	void FixedUpdate () 
 	{
 		Vector2 vec = new Vector2(0,10);
 		bool isFlying = false;
@@ -62,7 +62,7 @@ public class BugMover : MonoBehaviour {
 		}
 		else if(GetTime() < spawnTime + preDuration)
 		{
-			vec = midPosition - preDisp + preDisp * (GetTime()-spawnTime/preDuration);
+			vec = midPosition - preDisp + preDisp * ((GetTime()-spawnTime)/preDuration);
 			isFlying = true;
 		}
 		else if (GetTime() < spawnTime + preDuration + midDuration)
