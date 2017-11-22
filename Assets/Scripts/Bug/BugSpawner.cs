@@ -21,9 +21,13 @@ public class BugSpawner : MonoBehaviour {
 	Queue<GameObject> spawnQ;
 
 	public GameObject normalBug;
-	public Vector2[] normalPositions;
+	public Vector2[] normalPositionsR;
+	[HideInInspector]
+	public Vector2[] normalPositionsL;
 	public GameObject bigBug;
-	public Vector2[] bigPositions;
+	public Vector2[] bigPositionsR;
+	[HideInInspector]
+	public Vector2[] bigPositionsL;
 	GameObject selectedBug;
 
 	public Pattern[] patternDic;
@@ -37,6 +41,18 @@ public class BugSpawner : MonoBehaviour {
 	int bigPosNum = 0;
 	void Start () 
 	{
+		normalPositionsL = new Vector2[normalPositionsR.Length];
+		for (int i = 0; i < normalPositionsR.Length; i++)
+		{
+			normalPositionsL[i] = new Vector2(-1*normalPositionsR[i].x,normalPositionsR[i].y);
+		}
+
+		bigPositionsL = new Vector2[bigPositionsR.Length];
+		for (int i = 0; i < bigPositionsR.Length; i++)
+		{
+			bigPositionsL[i] = new Vector2(-1*bigPositionsR[i].x,bigPositionsR[i].y);
+		}
+
 		spawnQ = new Queue<GameObject>();
 		for (int i = 0; i < patternScore.Length; i++)
 		{
@@ -49,26 +65,30 @@ public class BugSpawner : MonoBehaviour {
 	{
 		for (int i = 0; i < p.notes.Length; i++)
 		{
-			Vector2 pos;
+			Vector2 posR;
+			Vector2 posL;
 			if (p.notes[i].type == BugType.Normal)
 			{
-				pos = normalPositions[normalPosNum];
+				posR = normalPositionsR[normalPosNum];
+				posL= normalPositionsL[normalPosNum];
 				selectedBug = normalBug;
+				normalPosNum++;
 			}
 			else
 			{
-				pos = bigPositions[bigPosNum];
+				posR = bigPositionsR[bigPosNum];
+				posL = bigPositionsL[bigPosNum];
 				selectedBug = bigBug;
+				bigPosNum++;
 			}
-			spawnQ.Enqueue(SpawnOne(p.notes[i], pos, measureNum, selectedBug));
-			spawnQ.Enqueue(SpawnOne(p.notes[i], new Vector2(-1*pos.x, pos.y), measureNum, selectedBug));
-			normalPosNum++;
-			bigPosNum++;
-			if(normalPosNum >= normalPositions.Length)
+			spawnQ.Enqueue(SpawnOne(p.notes[i], posR, measureNum, selectedBug));
+			spawnQ.Enqueue(SpawnOne(p.notes[i], posL, measureNum, selectedBug));
+			
+			if(normalPosNum >= normalPositionsR.Length)
 			{
 				normalPosNum = 0 ;
 			}
-			if(bigPosNum >= bigPositions.Length)
+			if(bigPosNum >= bigPositionsR.Length)
 			{
 				bigPosNum = 0 ;
 			}

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4388487056287106}
   - component: {fileID: 212627168587810290}
   - component: {fileID: 95272489498689794}
+  - component: {fileID: 70588605452674368}
   - component: {fileID: 114963801880767842}
   m_Layer: 0
   m_Name: BigBug
@@ -42,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &70588605452674368
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967980359195512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: 0.22}
+  m_Size: {x: 0.52, y: 1.25}
+  m_Direction: 0
 --- !u!95 &95272489498689794
 Animator:
   serializedVersion: 3
