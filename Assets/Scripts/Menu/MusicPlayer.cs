@@ -70,5 +70,9 @@ public class MusicPlayer : MonoBehaviour {
 		{
 			soundPlayer.GetComponent<AudioSource>().Play();
 		}
+		if(FindObjectOfType<GameManager>() != null)
+		{
+			StopMusic();
+		}
 	}
 }
