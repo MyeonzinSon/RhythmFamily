@@ -62,7 +62,10 @@ public class MusicPlayer : MonoBehaviour {
 	}
 	public static void StopMusic()
 	{
-		instance.audio.Stop();
+		if (instance != null)
+		{
+			instance.audio.Stop();
+		}
 	}
 	public static void PlaySound()
 	{

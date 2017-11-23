@@ -24,4 +24,8 @@ public class SceneMover : MonoBehaviour {
         SceneManager.LoadScene(sceneNum);
 		MusicPlayer.PlaySound();
     }
+	public static void MoveSceneStatic(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);
+	}
 }

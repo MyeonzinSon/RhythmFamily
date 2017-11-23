@@ -99,11 +99,11 @@ public class BugMover : MonoBehaviour {
 		}
 		else if (state == 1)
 		{
-			score = (int)(100*GetTime()/preDuration);
+			score = 1+(int)(99*(GetTime()/preDuration)*(GetTime()/preDuration));
 		}
 		else if (state == 3)
 		{
-			score = (int)(100*(1-(GetTime()-preDuration-midDuration)/postDuration));
+			score = 1+(int)(99*(1-(GetTime()-preDuration-midDuration)/postDuration)*(1-(GetTime()-preDuration-midDuration)/postDuration));
 		}
 		else
 		{
