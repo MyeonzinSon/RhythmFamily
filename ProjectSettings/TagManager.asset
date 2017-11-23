@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NormalBug
   - BigBug
+  - Ghost
   layers:
   - Default
   - TransparentFX

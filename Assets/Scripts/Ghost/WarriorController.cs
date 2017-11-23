@@ -13,17 +13,23 @@ public class WarriorController : MonoBehaviour {
 	public float attackDuration = 0.25f;
 	float oneBeat = GhostManager.oneBeat;
 	float initTime, nextMotionTime, lastMotionTime, lastAttackTime;
+	float beatChecker;
 	bool isMoving, isBashing;
 	SpriteRenderer spriteRenderer;
+	Collider2D collider;
 	void Start () 
 	{
+		collider = GetComponent<Collider2D>();
+		collider.enabled = false;
 		initTime = Time.time;
 		nextMotionTime = initTime;
+		beatChecker = initTime;
 		isMoving = false;
 		isBashing = false;
 
 		initPos = transform.position;
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		collider = GetComponent<Collider2D>();
 		spriteRenderer.sprite = idleSprite;
 	}
 	float GetTime()
@@ -32,6 +38,10 @@ public class WarriorController : MonoBehaviour {
 	}
 	void Update () 
 	{
+		if(collider.enabled)
+		{
+			collider.enabled = false;
+		}
 		if(!isBashing)
 		{
 			if(GetTime() >= nextMotionTime)
@@ -61,11 +71,15 @@ public class WarriorController : MonoBehaviour {
 		}
 		else
 		{
-			if(GetTime() - lastAttackTime >= attackDuration*oneBeat)
+			if(GetTime() - lastAttackTime >= attackDuration*oneBeat && GetTime() >= beatChecker)
 			{
 				isBashing = false;
 				spriteRenderer.sprite = idleSprite;
 			}
+		}
+		if (GetTime() >= beatChecker)
+		{
+			beatChecker += oneBeat / 2f;
 		}
 	}
 	void StartBash()
@@ -73,6 +87,15 @@ public class WarriorController : MonoBehaviour {
 		isBashing = true;
 		isMoving = false;
 		lastAttackTime = GetTime();
+		collider.enabled = true;
 		spriteRenderer.sprite = attackSprite;
+	}
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Ghost")
+		{
+			Destroy(other.gameObject);
+			GetComponent<AudioSource>().Play();
+		}
 	}
 }

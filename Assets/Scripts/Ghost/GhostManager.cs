@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostManager : MonoBehaviour {
 
-	public static float oneBeat = 0.5f;
+	public static float oneBeat = 0.63157894736f;
 
 	float time;
 	float startTime;
