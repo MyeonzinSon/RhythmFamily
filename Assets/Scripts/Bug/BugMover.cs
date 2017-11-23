@@ -47,7 +47,7 @@ public class BugMover : MonoBehaviour {
 	}
 	float GetTime()
 	{
-		return Time.fixedTime - initTime;
+		return Time.fixedTime - initTime - spawnTime;
 	}
 	void SetPos(Vector2 vec)
 	{
@@ -58,25 +58,25 @@ public class BugMover : MonoBehaviour {
 		Vector2 vec = new Vector2(0,10);
 		bool isFlying = false;
 
-		if(GetTime() < spawnTime)
+		if(GetTime() < 0)
 		{
 
 		}
-		else if(GetTime() < spawnTime + preDuration)
+		else if(GetTime() < preDuration)
 		{
-			vec = midPosition - preDisp + preDisp * ((GetTime()-spawnTime)/preDuration);
+			vec = midPosition - preDisp + preDisp * (GetTime()/preDuration);
 			isFlying = true;
 			state = 1;
 		}
-		else if (GetTime() < spawnTime + preDuration + midDuration)
+		else if (GetTime() < preDuration + midDuration)
 		{
 			vec = midPosition;
 			isFlying = false;
 			state = 2;
 		}
-		else if (GetTime() < spawnTime + preDuration + midDuration + postDuration)
+		else if (GetTime() < preDuration + midDuration + postDuration)
 		{
-			vec = midPosition + postDisp * ((GetTime()-spawnTime-preDuration-midDuration)/postDuration);
+			vec = midPosition + postDisp * ((GetTime()-preDuration-midDuration)/postDuration);
 			isFlying = true;
 			state = 3;
 		}
@@ -99,11 +99,11 @@ public class BugMover : MonoBehaviour {
 		}
 		else if (state == 1)
 		{
-			score = (int)(100*(GetTime()-spawnTime)/preDuration);
+			score = (int)(100*GetTime()/preDuration);
 		}
 		else if (state == 3)
 		{
-			score = (int)(100*(1-(GetTime()-spawnTime-preDuration-midDuration)/postDuration));
+			score = (int)(100*(1-(GetTime()-preDuration-midDuration)/postDuration));
 		}
 		else
 		{

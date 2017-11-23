@@ -8,11 +8,34 @@ public class GameManager : MonoBehaviour{
     public Text scoreText1;
     public Text scoreText2;
     public GameObject textMover;
+    public Slider slider;
 
+    float initTime;
+    float startTime;
+    float musicLength;
     void Start()
     {
         score1 = 0;
         score2 = 0;
+        initTime = Time.time;
+        slider.value = 0;
+    }
+    public void SetTime(float start, float length)
+    {
+        startTime = start;
+        musicLength = length;
+    }
+
+    float MusicTime()
+    {
+        return Time.time - initTime - startTime;
+    }
+    void Update()
+    {
+        if (MusicTime() >= 0 && MusicTime() <= musicLength)
+        {
+            slider.value = MusicTime()/musicLength;
+        }
     }
     public void AddScore(Player player, int value, Vector2 pos)
     {
