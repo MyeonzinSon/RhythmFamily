@@ -13,11 +13,10 @@ public class StickController : MonoBehaviour {
 	public KeyCode inputKey;
 	public BugSpawner bugSpawner;
 	float movedTime;
+	float returnTime;
 	float oneBeat = 0.491803279f;
 	GameManager gameManager;
 	AudioSource audio;
-
-	float returnTime;
 	void Start () 
 	{
 		gameManager = FindObjectOfType<GameManager>();

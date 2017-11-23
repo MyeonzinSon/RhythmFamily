@@ -92,21 +92,23 @@ public class BugMover : MonoBehaviour {
 	}
 	public int GetScore()
 	{
+		int score;
 		if (state == 2)
 		{
-			return 100;
+			score = 100;
 		}
 		else if (state == 1)
 		{
-			return (int)(100*(GetTime()-spawnTime)/preDuration);
+			score = (int)(100*(GetTime()-spawnTime)/preDuration);
 		}
 		else if (state == 3)
 		{
-			return (int)(100*(1-(GetTime()-spawnTime-preDuration-midDuration)/postDuration));
+			score = (int)(100*(1-(GetTime()-spawnTime-preDuration-midDuration)/postDuration));
 		}
 		else
 		{
-			return 0;
+			score = 0;
 		}
+		return score;
 	}
 }
