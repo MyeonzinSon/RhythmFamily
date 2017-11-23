@@ -60,7 +60,7 @@ public class BugSpawner : MonoBehaviour {
 		}
 		initTime = Time.time;
 		hasPlayed = false;
-		GetComponent<GameManager>().SetTime(oneBeat * 4, oneBeat *(patternScore.Length)*4);
+		GetComponent<BugManager>().SetTime(oneBeat * 4, oneBeat *(patternScore.Length)*4);
 	}
 	void InterpretPattern(Pattern p, int measureNum)
 	{

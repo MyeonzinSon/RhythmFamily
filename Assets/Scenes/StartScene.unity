@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efcdb1e3a99c4e4eaead78bf6f90737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToGo: 1
+  sceneToGo: SelectMode
 --- !u!1 &581133234
 GameObject:
   m_ObjectHideFlags: 0

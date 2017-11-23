@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour{
+public class BugManager : MonoBehaviour{
     int score1;
     int score2;
     public Text scoreText1;

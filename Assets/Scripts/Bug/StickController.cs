@@ -15,11 +15,11 @@ public class StickController : MonoBehaviour {
 	float movedTime;
 	float returnTime;
 	float oneBeat = 0.491803279f;
-	GameManager gameManager;
+	BugManager gameManager;
 	AudioSource audio;
 	void Start () 
 	{
-		gameManager = FindObjectOfType<GameManager>();
+		gameManager = FindObjectOfType<BugManager>();
 		audio = GetComponent<AudioSource>();
 		initPos = transform.position;
 		returnTime = oneBeat / 4f;

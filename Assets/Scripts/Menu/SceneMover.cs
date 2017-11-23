@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneMover : MonoBehaviour {
     	
-	public int sceneToGo;
+	public string sceneToGo;
 	void Update () 
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -19,11 +19,6 @@ public class SceneMover : MonoBehaviour {
 		SceneManager.LoadScene(sceneName);
 		MusicPlayer.PlaySound();
 	}
-    public void MoveScene(int sceneNum)
-    {
-        SceneManager.LoadScene(sceneNum);
-		MusicPlayer.PlaySound();
-    }
 	public static void MoveSceneStatic(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);

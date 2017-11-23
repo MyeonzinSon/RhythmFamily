@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efcdb1e3a99c4e4eaead78bf6f90737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToGo: 1
+  sceneToGo: SelectMode
 --- !u!114 &838005024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1295210146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 242, y: 136, z: 0}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 838005022}
@@ -393,7 +393,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324658449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -47.6, z: 0}
+  m_LocalPosition: {x: -0.000061035156, y: -189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1295210150}

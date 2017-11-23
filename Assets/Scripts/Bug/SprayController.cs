@@ -23,11 +23,11 @@ public class SprayController : MonoBehaviour {
 	bool isMoved;
 	float oneBeat = 0.491803279f;
 
-	GameManager gameManager;
+	BugManager gameManager;
 	AudioSource audio;
 	void Start () 
 	{
-		gameManager = FindObjectOfType<GameManager>();
+		gameManager = FindObjectOfType<BugManager>();
 		audio = GetComponent<AudioSource>();
 		pos = transform.position;
 		returnTime = oneBeat / 4f;
