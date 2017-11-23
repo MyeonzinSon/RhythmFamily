@@ -66,7 +66,7 @@ public class SprayController : MonoBehaviour {
 	{
 		if (other.tag == "BigBug")
 		{
-			gameManager.AddScore(player, other.GetComponent<BugMover>().GetScore());
+			gameManager.AddScore(player, other.GetComponent<BugMover>().GetScore(), other.transform.position);
 			audio.Play();
 			Destroy(other.gameObject);
 		}

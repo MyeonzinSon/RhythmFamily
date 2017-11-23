@@ -55,7 +55,7 @@ public class StickController : MonoBehaviour {
 	{
 		if (other.tag == "NormalBug")
 		{
-			gameManager.AddScore(player, other.GetComponent<BugMover>().GetScore());
+			gameManager.AddScore(player, other.GetComponent<BugMover>().GetScore(), other.transform.position);
 			audio.Play();
 			Destroy(other.gameObject);
 		}
