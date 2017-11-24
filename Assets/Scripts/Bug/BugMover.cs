@@ -38,6 +38,7 @@ public class BugMover : MonoBehaviour {
 		preDuration = oneBeat * preBeats;
 		midDuration = oneBeat * midBeats;
 		postDuration = oneBeat * postBeats;
+		SetPos(new Vector2(0,10));
 	}
 	public void SetVariables(float st, Vector2 pos, float time)
 	{
@@ -55,12 +56,12 @@ public class BugMover : MonoBehaviour {
 	}
 	void FixedUpdate () 
 	{
-		Vector2 vec = new Vector2(0,10);
+		Vector2 vec;
 		bool isFlying = false;
 
 		if(GetTime() < 0)
 		{
-
+			return;
 		}
 		else if(GetTime() < preDuration)
 		{

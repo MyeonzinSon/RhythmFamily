@@ -21,7 +21,7 @@ public class WarriorController : MonoBehaviour {
 	{
 		collider = GetComponent<Collider2D>();
 		collider.enabled = false;
-		initTime = Time.fixedTime;
+		initTime = Time.time;
 		lastMotionTime = GetTime();
 		lastAttackTime = GetTime();
 		nextMotionTime = GetTime();
@@ -36,15 +36,14 @@ public class WarriorController : MonoBehaviour {
 	}
 	float GetTime()
 	{
-		return Time.fixedTime - initTime;
+		return Time.time - initTime;
 	}
 	void Update () 
 	{
 		if(collider.enabled)
 		{
 			collider.enabled = false;
-		}
-		Debug.Log("isBashing : "+ isBashing+ " " + GetTime());		
+		}	
 		if(!isBashing)
 		{
 			if(GetTime() >= nextMotionTime)

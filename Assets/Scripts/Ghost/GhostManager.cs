@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GhostManager : MonoBehaviour {
 
-	public static float oneBeat = 0.5f;
+	public static float oneBeat = 0.46875f;
 	public static bool failed;
 
 	public Image[] hearts = new Image[4];
@@ -29,7 +29,7 @@ public class GhostManager : MonoBehaviour {
 
 		MusicPlayer.StopMusic();
 		isFinished = false;
-		initTime = Time.fixedTime;
+		initTime = Time.time;
 		slider.value = 0;
 
 		startMessage.SetActive(true);
@@ -56,11 +56,11 @@ public class GhostManager : MonoBehaviour {
 	}
 	float MusicTime()
     {
-        return Time.fixedTime - initTime - startTime;
+        return Time.time - initTime - startTime;
     }
     void Update()
     {
-		if(startMessage.active && MusicTime() >= 0)
+		if(startMessage.active && MusicTime() >= -1*oneBeat)
 		{
 			startMessage.SetActive(false);
 		}
@@ -77,6 +77,7 @@ public class GhostManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneMover.MoveSceneStatic("StartScene");
+				MusicPlayer.PlayMusic(MusicType.Menu);
             }
         }
     }

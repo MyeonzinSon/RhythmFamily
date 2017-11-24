@@ -30,7 +30,7 @@ public class GhostMover : MonoBehaviour {
 	}
 	float GetTime()
 	{
-		return Time.fixedTime - initTime - spawnTime;
+		return Time.time - initTime - spawnTime;
 	}
 	void FixedUpdate()
 	{
@@ -43,6 +43,7 @@ public class GhostMover : MonoBehaviour {
 			{
 				Destroy(gameObject);
 			}
+			return;
 		}
 		else if (GetTime() <= startTime)
 		{

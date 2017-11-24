@@ -37,27 +37,30 @@ public class MusicPlayer : MonoBehaviour {
 	}
 	public static void PlayMusic(MusicType mt)
 	{
-		AudioClip clip;
-		switch(mt)
-		{
-			case MusicType.Bug:
-			{
-				clip = instance.bugMusic; break;
-			}
-			case MusicType.Ghost:
-			{
-				clip = instance.ghostMusic; break;
-			}
-			default:
-			{
-				clip = instance.menuMusic; break;
-			}
-		}
 		if (instance != null)
 		{
-			instance.audio.Stop();
-			instance.audio.clip = clip;
-			instance.audio.Play();
+			AudioClip clip;
+			switch(mt)
+			{
+				case MusicType.Bug:
+				{
+					clip = instance.bugMusic; break;
+				}
+				case MusicType.Ghost:
+				{
+					clip = instance.ghostMusic; break;
+				}
+				default:
+				{
+					clip = instance.menuMusic; break;
+				}
+			}
+			if (instance != null)
+			{
+				instance.audio.Stop();
+				instance.audio.clip = clip;
+				instance.audio.Play();
+			}
 		}
 	}
 	public static void StopMusic()

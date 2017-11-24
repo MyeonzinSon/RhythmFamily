@@ -52,6 +52,7 @@ public class BugManager : MonoBehaviour{
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneMover.MoveSceneStatic("StartScene");
+                MusicPlayer.PlayMusic(MusicType.Menu);
             }
         }
     }
