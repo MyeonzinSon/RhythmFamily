@@ -29,7 +29,7 @@ public class GhostManager : MonoBehaviour {
 
 		MusicPlayer.StopMusic();
 		isFinished = false;
-		initTime = Time.time;
+		initTime = Time.fixedTime;
 		slider.value = 0;
 
 		startMessage.SetActive(true);
@@ -56,7 +56,7 @@ public class GhostManager : MonoBehaviour {
 	}
 	float MusicTime()
     {
-        return Time.time - initTime - startTime;
+        return Time.fixedTime - initTime - startTime;
     }
     void Update()
     {

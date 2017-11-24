@@ -35,7 +35,7 @@ public class GhostSpawner : MonoBehaviour {
 		{
 			InterpretPattern(patternDic[patternScore[i]], i+2);		
 		}
-		initTime = Time.time;
+		initTime = Time.fixedTime;
 		hasPlayed = false;
 		GetComponent<GhostManager>().SetTime(oneBeat * 8, oneBeat *(patternScore.Length)*4);
 	}
@@ -64,7 +64,7 @@ public class GhostSpawner : MonoBehaviour {
 	}
 	void Update () 
 	{
-		if (!hasPlayed && Time.time - initTime >= 8f * oneBeat)
+		if (!hasPlayed && Time.fixedTime - initTime >= 8f * oneBeat)
 		{
 			GetComponent<AudioSource>().Play();
 			hasPlayed = true;
