@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Bug.unity
     guid: 8a37510350fbef54caa8e9e82f5dca89
+  - enabled: 1
+    path: Assets/Scenes/Game_Ghost.unity
+    guid: d238d622954a2424f8bf35cf1bf8afb0

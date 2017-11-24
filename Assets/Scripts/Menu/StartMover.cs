@@ -7,6 +7,10 @@ public class StartMover : MonoBehaviour {
 	public float speed;
     public float maxX;
     
+    void Start()
+    {
+        MusicPlayer.PlayMusic(MusicType.Menu);
+    }
 	void Update () {
         transform.position = transform.position + new Vector3(speed*Time.deltaTime,0,0);
 

@@ -57,9 +57,9 @@ public class GhostSpawner : MonoBehaviour {
 	}
 	GameObject SpawnOne(GhostNote note, Vector2 startPos, Vector2 boostPos, int measureNum)
 	{
-		float spawnTime = (measureNum * 4 + note.beat - 1 - 4.625f) * oneBeat;
+		float spawnTime = (measureNum * 4 + note.beat - 1 - 4.75f) * oneBeat;
 		GameObject go = Instantiate(ghost,transform);
-		go.GetComponent<GhostMover>().SetVariables(spawnTime, startPos, boostPos);
+		go.GetComponent<GhostMover>().SetVariables(spawnTime, startPos, boostPos, Time.fixedTime);
 		return go;
 	}
 	void Update () 

@@ -15,33 +15,40 @@ public class GhostMover : MonoBehaviour {
 
 	void Start()
 	{
-		initTime = Time.time;
-		velocity = Time.fixedDeltaTime * (boostPoint - startPoint) / boostTime;
-		accel = 30 * velocity;
+		
 	}
-	public void SetVariables(float spawn, Vector2 startPos, Vector2 boostPos)
+	public void SetVariables(float spawn, Vector2 startPos, Vector2 boostPos, float time)
 	{
 		spawnTime = spawn;
 		startPoint = startPos;
 		boostPoint = boostPos;
+		initTime = time;
+
+		velocity = Time.fixedDeltaTime * (boostPoint - startPoint) / boostTime;
+		accel = 30 * velocity;
+		Debug.Log(spawnTime/oneBeat);
 	}
 	float GetTime()
 	{
-		return Time.time - initTime - spawnTime;
+		return Time.fixedTime - initTime - spawnTime;
 	}
 	void FixedUpdate()
 	{
 		Vector2 vel;
-		if (GetTime() < 0)
+		if (GetTime() <= 0)
 		{
 			transform.position = 2*startPoint - boostPoint;
 			vel = new Vector2(0,0);
+			if(GhostManager.failed)
+			{
+				Destroy(gameObject);
+			}
 		}
-		else if (GetTime() < startTime)
+		else if (GetTime() <= startTime)
 		{
 			vel = velocity + accel*(startTime - GetTime())/oneBeat;
 		}
-		else if (GetTime() < startTime + boostTime)
+		else if (GetTime() <= startTime + boostTime)
 		{
 			vel = velocity;
 		}
@@ -51,11 +58,11 @@ public class GhostMover : MonoBehaviour {
 		}
 
 		transform.position = new Vector2(transform.position.x, transform.position.y) + vel;
-		Debug.Log(transform.position.x + ", " + transform.position.y + " : "+ vel.x + "," + vel.y);
+		//Debug.Log(transform.position.x + ", " + transform.position.y + " : "+ vel.x + "," + vel.y);
 
 		if (transform.position.y < -6)
 		{
-			GhostManager.SubHeart();
+			FindObjectOfType<GhostManager>().SubHeart();
 			Destroy(gameObject);
 		}
 	}
