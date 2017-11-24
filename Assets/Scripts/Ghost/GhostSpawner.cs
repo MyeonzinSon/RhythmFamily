@@ -37,7 +37,7 @@ public class GhostSpawner : MonoBehaviour {
 		}
 		initTime = Time.time;
 		hasPlayed = false;
-		GetComponent<GhostManager>().SetTime(oneBeat * 8, oneBeat *(patternScore.Length)*4);
+		GetComponent<GhostManager>().SetTime(oneBeat * 8, oneBeat *((patternScore.Length)*4 + 2));
 	}
 	void InterpretPattern(GhostPattern p, int measureNum)
 	{

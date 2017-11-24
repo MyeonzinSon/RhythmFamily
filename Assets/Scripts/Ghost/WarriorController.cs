@@ -11,6 +11,7 @@ public class WarriorController : MonoBehaviour {
 	public float yMotionDisp = -0.25f;
 	public float motionDuration = 0.25f;
 	public float attackDuration = 0.25f;
+	public float beatCheckDuration = 0.25f;
 	float oneBeat = GhostManager.oneBeat;
 	float initTime, nextMotionTime, lastMotionTime, lastAttackTime;
 	float beatChecker;
@@ -82,7 +83,7 @@ public class WarriorController : MonoBehaviour {
 		}
 		if (GetTime() >= beatChecker)
 		{
-			beatChecker += oneBeat / 2f;
+			beatChecker += oneBeat *beatCheckDuration;
 		}
 	}
 	void StartBash()

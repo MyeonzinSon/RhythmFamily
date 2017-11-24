@@ -44,7 +44,7 @@ public class GhostManager : MonoBehaviour {
 			hearts[currentHeart-1].enabled = false;
 			currentHeart--;
 		}
-		else if(currentHeart <= 0)
+		else if(currentHeart <= 0 )
 		{
 			Failed();
 		}
@@ -60,7 +60,7 @@ public class GhostManager : MonoBehaviour {
     }
     void Update()
     {
-		if(startMessage.active && MusicTime() >= -1*oneBeat)
+		if(startMessage.active && MusicTime() >= -5*oneBeat)
 		{
 			startMessage.SetActive(false);
 		}
@@ -88,7 +88,6 @@ public class GhostManager : MonoBehaviour {
 	}
 	void Failed()
 	{
-		Debug.Log("Failed");
 		isFinished = true;
 		failMessage.SetActive(true);
 		GhostManager.failed = true;
