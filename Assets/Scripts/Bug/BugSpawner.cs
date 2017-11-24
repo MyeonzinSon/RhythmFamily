@@ -97,7 +97,7 @@ public class BugSpawner : MonoBehaviour {
 	}
 	GameObject SpawnOne(Note note, Vector2 spawnPos, int measureNum, GameObject selectedBug)
 	{
-		float spawnTime = (measureNum * 4 + note.beat - 1 - 2.5f) * oneBeat;
+		float spawnTime = (measureNum * 4 + note.beat - 1 - 1.5f) * oneBeat;
 		GameObject go = Instantiate(selectedBug,transform);
 		go.GetComponent<BugMover>().SetVariables(spawnTime, spawnPos,Time.fixedTime);
 		return go;

@@ -14,9 +14,9 @@ public class BugMover : MonoBehaviour {
 
 	float distance = 1f;
 
-	public float preBeats = 2f;
+	public float preBeats = 1f;
 	public float midBeats = 1f;
-	public float postBeats = 2f;
+	public float postBeats = 1f;
 
 	float preDuration;
 	float midDuration;

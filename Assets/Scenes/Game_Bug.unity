@@ -2472,55 +2472,249 @@ MonoBehaviour:
     - beat: 4
       type: 0
   - notes:
+    - beat: 1
+      type: 1
+    - beat: 3
+      type: 1
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 2
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 4
+      type: 0
+  - notes:
+    - beat: 2
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 4
+      type: 0
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 2
+      type: 0
+    - beat: 4
+      type: 0
+  - notes:
     - beat: 2
       type: 0
     - beat: 4
       type: 1
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 1.5
+      type: 0
+    - beat: 3
+      type: 0
+    - beat: 3.5
+      type: 0
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 3
+      type: 1
+    - beat: 4
+      type: 1
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.5
+      type: 0
+    - beat: 3
+      type: 0
+    - beat: 3.5
+      type: 0
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.5
+      type: 0
+    - beat: 3
+      type: 0
+    - beat: 3.5
+      type: 0
+    - beat: 4
+      type: 1
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 2
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 4
+      type: 0
+  - notes:
+    - beat: 2
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 4
+      type: 1
+    - beat: 4.5
+      type: 0
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 3
+      type: 0
+    - beat: 3.666
+      type: 0
+    - beat: 4.333
+      type: 0
   - notes:
     - beat: 2
       type: 0
     - beat: 3
       type: 0
     - beat: 4
-      type: 1
+      type: 0
   - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.5
+      type: 0
     - beat: 2
-      type: 1
+      type: 0
+    - beat: 2.5
+      type: 0
     - beat: 4
       type: 1
   - notes:
     - beat: 2
       type: 1
-    - beat: 4
-      type: 1
-  - notes:
-    - beat: 2
-      type: 1
-    - beat: 4
-      type: 1
-  - notes:
-    - beat: 2
-      type: 1
-    - beat: 4
-      type: 1
-  - notes:
-    - beat: 2
-      type: 1
-    - beat: 4
-      type: 1
-  - notes:
-    - beat: 2
-      type: 1
-    - beat: 4
-      type: 1
-  - notes:
+    - beat: 3
+      type: 0
     - beat: 3.5
+      type: 0
+    - beat: 4
+      type: 0
+    - beat: 4.5
+      type: 0
+  - notes:
+    - beat: 3
       type: 1
+    - beat: 4
+      type: 1
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 2.5
+      type: 1
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 3
+      type: 1
+    - beat: 4
+      type: 1
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 2.5
+      type: 1
+    - beat: 4
+      type: 0
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 2
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 3
+      type: 1
+    - beat: 4
+      type: 0
+    - beat: 4.5
+      type: 0
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.666
+      type: 0
+    - beat: 2.333
+      type: 0
+    - beat: 3
+      type: 0
+    - beat: 3.666
+      type: 0
+    - beat: 4.333
+      type: 0
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 2
+      type: 1
+    - beat: 3
+      type: 0
+    - beat: 4
+      type: 0
+    - beat: 4.5
+      type: 0
+  - notes:
+    - beat: 1
+      type: 1
+    - beat: 2
+      type: 1
+    - beat: 3.5
+      type: 0
+    - beat: 4
+      type: 0
+    - beat: 4.5
+      type: 0
+  - notes:
+    - beat: 2
+      type: 0
+    - beat: 4.5
+      type: 1
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.5
+      type: 0
+    - beat: 2
+      type: 1
+    - beat: 2.5
+      type: 1
+    - beat: 3
+      type: 0
+    - beat: 3.5
+      type: 0
     - beat: 4
       type: 1
     - beat: 4.5
       type: 1
-  patternScore: 000000000100000000000000020000000000000001000000000000000900000000000000010000000000000002000000000000000100000000000000090000000000000001000000000000000200000000000000010000000000000009000000000000000100000000000000020000000000000001000000000000000900000000000000000000000000000001000000000000000000000000000000010000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.75
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 3
+      type: 1
+    - beat: 4
+      type: 1
+  - notes:
+    - beat: 1
+      type: 0
+    - beat: 1.75
+      type: 0
+    - beat: 2.5
+      type: 0
+    - beat: 3
+      type: 1
+    - beat: 4
+      type: 1
+    - beat: 4
+      type: 0
+  patternScore: 0000000000000000000000000100000002000000030000000300000001000000040000000500000000000000050000000400000005000000000000000500000006000000070000000800000007000000060000000700000009000000070000000a0000000b000000030000000c0000000a0000000b000000030000000c0000000d0000000e0000000f000000100000000d0000000e00000011000000120000000d0000000e0000000f000000100000000d0000000e000000130000001200000014000000140000001400000015000000140000001400000014000000150000001600000017000000180000001500000016000000170000001800000015000000190000001a000000190000001a000000190000001a000000190000001b000000
 --- !u!114 &1198200256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3209,7 +3403,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0.08
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1795171157
