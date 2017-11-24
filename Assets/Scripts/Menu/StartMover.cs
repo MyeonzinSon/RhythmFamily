@@ -17,5 +17,9 @@ public class StartMover : MonoBehaviour {
         {
             transform.position = new Vector3(-1 * maxX,transform.position.y,transform.position.z);
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 }
