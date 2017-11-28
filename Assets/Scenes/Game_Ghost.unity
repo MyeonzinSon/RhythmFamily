@@ -1322,7 +1322,7 @@ MonoBehaviour:
   attackSprite: {fileID: 21300000, guid: 1b2bbffbb6b90f242a2079a4cb29771f, type: 3}
   yMotionDisp: -0.25
   motionDuration: 0.25
-  attackDuration: 0.125
+  attackDuration: 0.5
   beatCheckDuration: 0.125
 --- !u!82 &790582858
 AudioSource:
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   attackSprite: {fileID: 21300000, guid: 2dd856806d1e87440bbd12abd3aa2b6b, type: 3}
   yMotionDisp: -0.25
   motionDuration: 0.25
-  attackDuration: 0.125
+  attackDuration: 0.5
   beatCheckDuration: 0.125
 --- !u!212 &1806083349
 SpriteRenderer:

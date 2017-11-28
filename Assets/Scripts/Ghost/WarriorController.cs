@@ -14,7 +14,7 @@ public class WarriorController : MonoBehaviour {
 	public float beatCheckDuration = 0.25f;
 	float oneBeat = GhostManager.oneBeat;
 	float initTime, nextMotionTime, lastMotionTime, lastAttackTime;
-	float beatChecker;
+	float attackDelay, beatChecker;
 	bool isMoving, isBashing;
 	SpriteRenderer spriteRenderer;
 	Collider2D collider;
@@ -47,6 +47,11 @@ public class WarriorController : MonoBehaviour {
 		}	
 		if(!isBashing)
 		{
+			if(GetTime() >= beatChecker)
+			{
+				spriteRenderer.sprite = idleSprite;
+			}
+
 			if(GetTime() >= nextMotionTime)
 			{
 				isMoving = true;
@@ -75,10 +80,9 @@ public class WarriorController : MonoBehaviour {
 		}
 		else
 		{
-			if(GetTime() - lastAttackTime >= attackDuration*oneBeat && GetTime() >= beatChecker)
+			if(GetTime() - lastAttackTime >= attackDelay && GetTime() >= beatChecker)
 			{
-				isBashing = false;
-				spriteRenderer.sprite = idleSprite;
+				isBashing=false;
 			}
 		}
 		if (GetTime() >= beatChecker)
@@ -93,11 +97,18 @@ public class WarriorController : MonoBehaviour {
 		lastAttackTime = GetTime();
 		collider.enabled = true;
 		spriteRenderer.sprite = attackSprite;
+		attackDelay = attackDuration*oneBeat;
+	}
+	void EndBash()
+	{
+		isBashing = false;
+		spriteRenderer.sprite = idleSprite;
 	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Ghost")
 		{
+			attackDelay = beatCheckDuration*oneBeat;
 			Destroy(other.gameObject);
 			GetComponent<AudioSource>().Play();
 		}
